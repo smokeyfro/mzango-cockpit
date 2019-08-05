@@ -67,6 +67,16 @@ export default {
           title
           excerpt
           path
+          email
+          website
+          phone
+          mobile
+          place {
+            display
+          }
+          province {
+            display
+          }
         }
       }
     }
