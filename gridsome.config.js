@@ -29,7 +29,7 @@ module.exports = {
             host: '/stay/:slug',
             event: '/events/:year/:month/:slug',
             event_type: '/events/:slug',
-            activity: '/go/:slug'
+            activity: '/do/:slug'
           }
         }
     },
