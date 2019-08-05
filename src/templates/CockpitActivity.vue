@@ -22,6 +22,7 @@ export default {
   metaInfo () {
     return {
       title: `${this.$page.post.title}`
+    }
   },
   methods: {
     description(post, length, clamp) {
