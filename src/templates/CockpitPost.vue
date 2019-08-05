@@ -7,7 +7,7 @@
           <div class="">
             <div class="markdown text-3xl mr-10 leading-normal text-gray-700" v-html="$page.post.excerpt" />
           </div>
-          <div class="markdown text-xl leading-normal text-gray-700" v-html="$page.post.content" />
+          <div></div>
         </div>
       </article>
     </main>
