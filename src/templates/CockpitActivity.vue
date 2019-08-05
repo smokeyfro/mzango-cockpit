@@ -1,10 +1,14 @@
 <template>
   <Layout>
-    <main>
-      <post-header :post="$page.post" />
-      <article class="max-w-xl md:max-w-2xl xl:max-w-3xl mx-auto px-6 sm:px-12 pt-16">
-        <div class="markdown text-xl leading-normal text-gray-700" v-html="$page.post.excerpt" />
-        <div class="markdown text-xl leading-normal text-gray-700" v-html="$page.post.content" />
+    <main class="p-10">
+      <article>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-5">{{ $page.post.title }}</h1>
+        <div class="flex">
+          <div class="">
+            <div class="markdown text-3xl mr-10 leading-normal text-gray-700" v-html="$page.post.excerpt" />
+          </div>
+          <div class="markdown text-xl leading-normal text-gray-700" v-html="$page.post.content" />
+        </div>
       </article>
     </main>
   </Layout>

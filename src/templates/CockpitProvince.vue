@@ -1,10 +1,25 @@
 <template>
   <Layout>
-    <main>
-      <post-header :post="$page.post" />
-      <article class="max-w-xl md:max-w-2xl xl:max-w-3xl mx-auto px-6 sm:px-12 pt-16">
-        <div class="markdown text-xl leading-normal text-gray-700" v-html="$page.post.excerpt" />
-        <div class="markdown text-xl leading-normal text-gray-700" v-html="$page.post.content" />
+    <main class="p-10">
+      <article>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-5">{{ $page.post.title }}</h1>
+        <div class="flex">
+          <div class="">
+            <div class="markdown text-3xl mr-10 leading-normal text-gray-700" v-html="$page.post.excerpt" />
+            <div class="flex mt-6">
+              <g-image src="~/assets/sun.svg" width="20" immediate="true" /> <span class="text-lg font-italic ml-2 leading-normal text-gray-700" v-html="$page.post.weather" />
+            </div>
+
+            <ul class="mt-6 mr-3">
+              <li><strong class="w-1/4 inline-block">Population:</strong> <span>{{ $page.post.population }}</span></li>
+              <li><strong class="w-1/4 inline-block">Area:</strong> <span>{{ $page.post.area_km }}</span> <span>{{ $page.post.area_sqm }}</span></li>
+              <li><strong class="w-1/4 inline-block">Code:</strong> <span>{{ $page.post.code }}</span></li>
+              <li v-if="$page.post.website"><strong class="w-1/4 inline-block">Capital:</strong> <span>{{ $page.post.capital }}</span></li>
+              <li v-if="$page.post.longitude"><strong class="w-1/4 inline-block">Largest City:</strong> <span>{{ $page.post.large_city }}</span></li>
+            </ul>
+          </div>
+          <div class="markdown text-xl leading-normal text-gray-700" v-html="$page.post.content" />
+        </div>
       </article>
     </main>
   </Layout>
@@ -21,7 +36,7 @@ export default {
   },
   metaInfo () {
     return {
-      title: `${this.$page.post.title} ${this.$page.post.topic ? '- '+this.$page.post.topic.name : ''}`
+      title: `${this.$page.post.title}`
     }
   },
   methods: {
@@ -45,7 +60,7 @@ export default {
       let siteUrl = this.config.siteUrl
       let postSlug = this.$page.post.slug
 
-      return postSlug ? `${siteUrl}/journal/${postSlug}/` : `${siteUrl}/journal/${slugify(this.$page.post.title)}/`
+      return postSlug ? `${siteUrl}/places/${postSlug}/` : `${siteUrl}/places/${slugify(this.$page.post.title)}/`
     }
   }
 }
@@ -58,6 +73,12 @@ query Province ($path: String) {
     slug
     content
     excerpt
+    capital
+    large_city
+    area_km
+    area_sqm
+    population
+    code
   }
 }
 </page-query>
