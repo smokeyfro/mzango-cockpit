@@ -51,7 +51,6 @@ export default {
         { property: "og:title", content: this.$page.post.title },
         { property: "og:description", content: this.description(this.$page.post) },
         { property: "og:url", content: this.postUrl },
-        { property: "article:published_time", content: moment(this.$page.post.date).format('YYYY-MM-DD') },
         { property: "og:image", content: this.ogImageUrl },
 
         { name: "twitter:card", content: "summary_large_image" },

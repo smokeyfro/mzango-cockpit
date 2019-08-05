@@ -38,7 +38,7 @@ export default {
       let text = post.content.replace(/<pre(.|\n)*?<\/pre>/gm, '').replace(/<[^>]+>/gm, '')
 
       return text.length > length ? `${ text.slice(0, length)}${clamp}` : text
-    }
+    },
   },
   computed: {
     config () {
@@ -55,11 +55,9 @@ export default {
 </script>
 
 <page-query>
-query Post ($path: String) {
-  post: cockpitPost(path: $path) {
+query Tag ($path: String) {
+  post: cockpitTag(path: $path) {
     title
-    slug
-    path
     excerpt
   }
 }
