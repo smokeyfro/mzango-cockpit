@@ -21,38 +21,9 @@ export default {
   },
   metaInfo () {
     return {
-      title: `${this.$page.post.title}`,
-      meta: [
-        {
-          key: 'description',
-          name: 'description',
-          content: this.description(this.$page.post)
-        },
-
-        { property: "og:type", content: 'article' },
-        { property: "og:title", content: this.$page.post.title },
-        { property: "og:description", content: this.description(this.$page.post) },
-        { property: "og:url", content: this.postUrl },
-        { property: "og:image", content: this.ogImageUrl },
-
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: this.$page.post.title },
-        { name: "twitter:description", content: this.description(this.$page.post) },
-        { name: "twitter:site", content: "@connectr" },
-        { name: "twitter:creator", content: "@connectr" },
-        { name: "twitter:image", content: this.ogImageUrl },
-      ],
-    }
-  },
-  mounted () {
-    import('medium-zoom').then(mediumZoom => {
-      this.zoom = mediumZoom.default('.markdown p > img')
-    })
+      title: `${this.$page.post.title}`
   },
   methods: {
-    imageLoadError (e) {
-      e.target.src = `/images/authors/default.png`
-    },
     description(post, length, clamp) {
       if (post.description) {
         return post.description
@@ -63,32 +34,18 @@ export default {
       let text = post.content.replace(/<pre(.|\n)*?<\/pre>/gm, '').replace(/<[^>]+>/gm, '')
 
       return text.length > length ? `${ text.slice(0, length)}${clamp}` : text
-    },
-    titleCase(str) {
-      return str.replace('-', ' ')
-      .split(' ')
-      .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-      .join(' ')
-    },
-
+    }
   },
   computed: {
     config () {
       return config
-    },
-    avatar () {
-      return `/images/chris.jpg`
     },
     postUrl () {
       let siteUrl = this.config.siteUrl
       let postSlug = this.$page.post.slug
 
       return postSlug ? `${siteUrl}/journal/${postSlug}/` : `${siteUrl}/journal/${slugify(this.$page.post.title)}/`
-    },
-    // },
-    // ogImageUrl () {
-    //   return this.$page.post.cover || `${this.config.siteUrl}/images/sf-card.png`
-    // }
+    }
   },
 }
 </script>
