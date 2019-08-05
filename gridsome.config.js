@@ -21,7 +21,6 @@ module.exports = {
             place: '/places/:slug',
             province: '/provinces/:slug',
             host: '/hosts/:slug',
-            accommodation_type: '/hosts/with/:slug',
             bucketlist: '/blucklists/:slug',
             tag: '/mag/:slug',
             topic: '/mag/:slug',
