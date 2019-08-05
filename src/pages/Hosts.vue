@@ -6,7 +6,7 @@
         <p class="text-grey-dark text-lg sm:text-3xl">Find a backpackers, camping spot or place to park your van.</p>
       </header>
       <section class="mt-10 flex flex-wrap -mb-4">
-        <host-item class="w-1/4 flex-initial p-2" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
+        <host-item class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
       </section>
       <pagination :info="$page.posts.pageInfo" v-if="$page.posts.pageInfo.totalPages > 1" />
     </main>
