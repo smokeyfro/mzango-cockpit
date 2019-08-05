@@ -12,7 +12,7 @@
           </ul>
         </nav>
         <div class="social-links">
-          <g-link class="bg-transparent hover:bg-black hover:text-white text-black border border-black hover:border-transparent font-bold rounded-full px-5 py-2" to="/contact/">Magazine</g-link>
+          <g-link class="bg-transparent hover:bg-black hover:text-white text-black border border-black hover:border-transparent font-bold rounded-full px-5 py-2" to="/mag/">Magazine</g-link>
           <Nav />
         </div>
       </div>
