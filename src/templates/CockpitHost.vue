@@ -110,6 +110,5 @@ query Host ($path: String) {
 </page-query>
 
 <style>
-  .header { background: #fff!important; }
-  .footer { position: static!important; }
+
 </style>

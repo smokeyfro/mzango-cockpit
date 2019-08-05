@@ -33,14 +33,5 @@ export default {
 </script>
 
 <style>
-  .header, .footer {
-    box-shadow: 0 0 30px 0 rgba(0,0,0,0.1);
-    background: #fff;
-  }
-  .flex > div:hover .poop {
-    margin-top: -3.9rem!important;
-  }
-  .flex > div .poop {
-    transition: 0.15s all ease;
-  }
+
   </style>

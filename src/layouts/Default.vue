@@ -7,15 +7,13 @@
 </template>
 
 <script>
-import config from '~/.temp/config.js';
+import config from '~/.temp/config.js'
 import Header from '~/components/Header.vue'
-import Contact from '~/components/Contact.vue'
 import Footer from '@/components/Footer'
 
 export default {
   components: {
     Header,
-    Contact,
     Footer
   },
   computed: {
