@@ -1,7 +1,6 @@
-<template>
-  <Layout>
-    <main>
-      <header class="max-w-xl md:max-w-2xl xl:max-w-3xl mx-auto text-center px-6 pt-0">
+<Layout class="bg-white">
+  <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
+    <header>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">Contact</h1>
         <p class="text-black text-lg sm:text-3xl">Got a project you'd like to discuss?</p>
         <p class="text-black text-lg">Fill out the form below and I'll get in touch asap.</p>

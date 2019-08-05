@@ -1,6 +1,6 @@
 <template>
   <Layout class="bg-white">
-    <main class="p-10">
+    <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
       <header>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">Places to Stay</h1>
         <p class="text-grey-dark text-lg sm:text-3xl">Find a backpackers, camping spot or place to park your van.</p>

@@ -1,5 +1,5 @@
 <template>
-  <header class="header p-3 md:p-10 sticky top-0 z-30">
+  <header class="relative z-20 p-3 md:p-10">
       <div class="flex items-center justify-between flex-wrap">
           <a href="/" class="logo block">
             <g-image src="~/assets/images/mzango-logo-default.png" width="110" alt="Mzango" immediate="true" class="logo" />

@@ -2,6 +2,9 @@
   <div class="layout font-sans relative h-screen">
     <Header />
     <slot/>
+    <div class="h-full w-full fixed top-0 z-0">
+      <g-image src="~/assets/images/home-header-pink.jpg" class="object-cover h-full" />
+    </div>
     <Footer />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <footer class="px-10 py-20">
+  <footer class="px-10 py-3">
     <!-- <div class="dev-note mb-2 w-auto inline-block pb-2">
       <strong class="text-red-700">Note:</strong>
       Site dev in progress 🙈
