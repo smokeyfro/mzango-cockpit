@@ -13,7 +13,7 @@
     "cockpit-sdk": "^0.15.1",
     "gridsome": "^0.6.6",
     "gridsome-plugin-rss": "^1.1.0",
-    "mapbox-gl-vue": "^1.9.0",
+    "vue-clickaway": "^2.2.2",
     "vue-youtube-embed": "^2.2.2"
   },
   "devDependencies": {
