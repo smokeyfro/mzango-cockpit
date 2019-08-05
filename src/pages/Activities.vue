@@ -2,7 +2,7 @@
   <Layout class="bg-white">
     <main class="p-10">
       <header>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">Activities</h1>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">Things to Do</h1>
         <p class="text-grey-dark text-lg sm:text-3xl">Discover cool things to do.</p>
       </header>
       <section class="mt-10 flex flex-wrap -mb-4">
