@@ -17,7 +17,7 @@ module.exports = {
           accessToken: process.env.ACCESSTOKEN,
           host: process.env.APIHOST,
           routes: {
-            post: '/mag/:year/:month/:slug',
+            post: '/mag/:slug',
             place: '/places/:slug',
             province: '/provinces/:slug',
             host: '/hosts/:slug',
