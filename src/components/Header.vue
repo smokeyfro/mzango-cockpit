@@ -9,6 +9,7 @@
             <li class="px-4"><g-link class="nav-places" to="/explore">City Guides</g-link></li>
             <li class="px-4"><g-link class="nav-hosts" to="/stay">Places to Stay</g-link></li>
             <li class="px-4"><g-link class="nav-actvities" to="/do">Things to Do</g-link></li>
+            <li class="px-4"><g-link class="nav-actvities" to="/see">Places of Interest</g-link></li>
           </ul>
         </nav>
         <div class="social-links">
