@@ -18,18 +18,18 @@ module.exports = {
           host: process.env.APIHOST,
           routes: {
             post: '/mag/:slug',
-            place: '/places/:slug',
+            place: '/explore/:slug',
             province: '/provinces/:slug',
             host: '/hosts/:slug',
             bucketlist: '/blucklists/:slug',
             tag: '/mag/:slug',
             topic: '/mag/:slug',
-            attraction: '/attractions/:slug',
-            attraction_type: '/attractions/:slug',
-            host: '/hosts/:slug',
+            attraction: '/see/:slug',
+            attraction_type: '/all/:slug',
+            host: '/stay/:slug',
             event: '/events/:year/:month/:slug',
             event_type: '/events/:slug',
-            activity: '/activities/:slug'
+            activity: '/go/:slug'
           }
         }
     },
