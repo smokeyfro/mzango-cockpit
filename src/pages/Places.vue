@@ -18,13 +18,11 @@
 import config from '~/.temp/config.js'
 import PostItem from '@/components/PostItem'
 import Pagination from '@/components/Pagination'
-import Provinces from '@/components/Provinces'
 
 export default {
   components: {
     PostItem,
-    Pagination,
-    Provinces
+    Pagination
   },
   metaInfo () {
     return {
