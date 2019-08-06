@@ -5,8 +5,8 @@
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">Things to Do</h1>
         <p class="text-grey-dark text-lg sm:text-3xl">Discover cool things to do.</p>
       </header>
-      <section class="mt-10 flex flex-wrap -mb-4">
-        <post-item class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
+      <section class="mt-10 grid md:3-cols lg:4-cols xl:5-cols">
+        <activity-item v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
       </section>
       <pagination :info="$page.posts.pageInfo" v-if="$page.posts.pageInfo.totalPages > 1" />
     </main>
@@ -15,12 +15,12 @@
 
 <script>
 import config from '~/.temp/config.js'
-import PostItem from '@/components/PostItem'
+import ActivityItem from '@/components/ActivityItem'
 import Pagination from '@/components/Pagination'
 
 export default {
   components: {
-    PostItem,
+    ActivityItem,
     Pagination
   },
   metaInfo () {
