@@ -1,6 +1,6 @@
 <template>
-  <Layout>
-    <main>
+  <Layout class="bg-white">
+    <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
       <post-header :post="$page.post" />
 
       <article class="max-w-xl md:max-w-2xl xl:max-w-3xl mx-auto px-6 sm:px-12 pt-16">
