@@ -5,7 +5,6 @@
         <h2 class="font-bold text-xl">
           <g-link :to="`${post.path}`" class="text-black font-bold">{{ post.title }}</g-link>
         </h2>
-        {{ post.place.display }}, {{ post.province.display }}
       </div>
   </article>
 </template>

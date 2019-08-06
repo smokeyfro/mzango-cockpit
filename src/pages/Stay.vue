@@ -5,8 +5,8 @@
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">Places to Stay</h1>
         <p class="text-grey-dark text-lg sm:text-3xl">Find a backpackers, camping spot or place to park your van.</p>
       </header>
-      <section class="mt-10 flex flex-wrap -mb-4">
-        <host-item class="w-full md:w-1/2" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
+      <section class="mt-10 grid md:3-cols lg:4-cols xl:5-cols">
+        <host-item class="" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
       </section>
       <pagination :info="$page.posts.pageInfo" v-if="$page.posts.pageInfo.totalPages > 1" />
     </main>

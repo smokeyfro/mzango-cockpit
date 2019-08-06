@@ -1,6 +1,6 @@
 <template>
-  <header class="relative z-20 p-3 md:p-10 header">
-      <div class="flex items-center justify-between flex-wrap">
+  <header class="p-3 md:p-10 header">
+      <div class="relative z-20 flex items-center justify-between flex-wrap">
           <a href="/" class="logo block">
             <g-image src="~/assets/images/mzango-logo-default.png" width="110" alt="Mzango" immediate="true" class="logo" />
           </a>

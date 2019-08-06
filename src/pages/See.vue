@@ -2,11 +2,11 @@
   <Layout class="bg-white">
     <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
       <header>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">Attractions</h1>
-        <p class="text-grey-dark text-lg sm:text-3xl">Explore South Africa's attractions.</p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">Places to See</h1>
+        <p class="text-grey-dark text-lg sm:text-3xl">Cool stuff to do in and around South Africa.</p>
       </header>
-      <section class="mt-10 flex flex-wrap -mb-4">
-        <host-item class="w-full md:w-1/2" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
+      <section class="mt-10 grid md:3-cols lg:4-cols xl:5-cols">
+        <attraction-item class="" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
       </section>
       <pagination :info="$page.posts.pageInfo" v-if="$page.posts.pageInfo.totalPages > 1" />
     </main>
@@ -15,12 +15,12 @@
 
 <script>
 import config from '~/.temp/config.js'
-import HostItem from '@/components/HostItem'
+import AttractionItem from '@/components/AttractionItem'
 import Pagination from '@/components/Pagination'
 
 export default {
   components: {
-    HostItem,
+    AttractionItem,
     Pagination
   },
   metaInfo () {
@@ -65,6 +65,8 @@ export default {
         node {
           id
           title
+          excerpt
+          path
         }
       }
     }
