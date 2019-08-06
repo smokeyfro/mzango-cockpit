@@ -86,7 +86,9 @@ hr.short {
   }
 }
 
-
+span.fe_location {
+    display: none;
+}
 
 .spacer {
     width: 100%;

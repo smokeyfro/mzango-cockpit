@@ -2,34 +2,35 @@
   <Layout class="bg-white">
     <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
       <article>
+        <div class="">
+          <span v-if="$page.post.district">{{ $page.post.district }}</span>
+          <span v-if="$page.post.province">{{ $page.post.province.display }}</span>
+        </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-5">{{ $page.post.title }}</h1>
+        <div class="">
+
+          <span v-if="$page.post.website">{{ $page.post.website }}</span>
+        </div>
         <div class="flex">
           <div class="">
             <div class="markdown text-3xl mr-10 leading-normal text-gray-700" v-html="$page.post.excerpt" />
-            <div class="flex mt-6">
-              <g-image src="~/assets/sun.svg" width="20" immediate="true" /> <span class="text-lg font-italic ml-2 leading-normal text-gray-700" v-html="$page.post.weather" />
-            </div>
-            <div class="">
+            <div class="mr-12 mt-5">
               <template>
                 <weather
                     api-key="408dbe336740c8c807f4a1c1ecf60e98"
                     title="Weather"
-                    latitude:="$page.post.latitude"
-                    longitude:="$page.post.longitude"
+                    :latitude="$page.post.latitude"
+                    :longitude="$page.post.longitude"
                     language="en"
-                    units="za">
+                    units="uk">
                 </weather>
             </template>
             </div>
-            <ul class="mt-6 mr-3">
-              <li v-if="$page.post.province"><strong class="w-1/4 inline-block">Province:</strong> <span>{{ $page.post.province.display }}</span></li>
-              <li><strong class="w-1/4 inline-block">District:</strong> <span>{{ $page.post.district }}</span></li>
+            <ul class="mt-6 mr-3 hidden">
               <li><strong class="w-1/4 inline-block">Population:</strong> <span>{{ $page.post.population }}</span></li>
               <li><strong class="w-1/4 inline-block">Area Code:</strong> <span>{{ $page.post.area_code }}</span></li>
               <li><strong class="w-1/4 inline-block">Postal Code:</strong> <span>{{ $page.post.postal_code }}</span></li>
               <li v-if="$page.post.website"><strong class="w-1/4 inline-block">Website:</strong> <span>{{ $page.post.website }}</span></li>
-              <li v-if="$page.post.longitude"><strong class="w-1/4 inline-block">Longitude:</strong> <span>{{ $page.post.longitude }}</span></li>
-              <li v-if="$page.post.latitude"><strong class="w-1/4 inline-block">Latitude:</strong> <span>{{ $page.post.latitude }}</span></li>
             </ul>
           </div>
           <div class="markdown text-xl leading-normal text-gray-700" v-html="$page.post.content" />
