@@ -18,7 +18,6 @@
               <template>
                 <weather
                     api-key="408dbe336740c8c807f4a1c1ecf60e98"
-                    :title="Weather in $page.post.title"
                     :latitude="$page.post.latitude"
                     :longitude="$page.post.longitude"
                     language="en"
