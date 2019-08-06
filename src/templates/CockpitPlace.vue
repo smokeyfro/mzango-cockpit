@@ -3,7 +3,7 @@
     <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
       <article>
         <div class="">
-          <span v-if="$page.post.district">{{ $page.post.district }}</span>
+          <span v-if="$page.post.district">{{ $page.post.district.display }} - </span>
           <span v-if="$page.post.province">{{ $page.post.province.display }}</span>
         </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-5">{{ $page.post.title }}</h1>
@@ -98,7 +98,9 @@ query Place ($path: String) {
     province{
       display
     }
-    district
+    district{
+      display
+    }
     website
     longitude
     latitude
