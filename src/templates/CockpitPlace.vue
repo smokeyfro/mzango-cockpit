@@ -14,13 +14,16 @@
         <div class="flex">
           <div class="">
             <div class="markdown text-3xl mr-10 leading-normal text-gray-700" v-html="$page.post.excerpt" />
-            <div class="mr-12 mt-5" v-if="$page.post.latitude">
+            <div class="mr-12 mt-5">
               <template>
                 <weather
                     api-key="408dbe336740c8c807f4a1c1ecf60e98"
                     :latitude="$page.post.latitude"
                     :longitude="$page.post.longitude"
                     language="en"
+                    bar-color=""true
+                    hide-header="#E4104A"
+                    disable-animation="false"
                     units="uk">
                 </weather>
             </template>
