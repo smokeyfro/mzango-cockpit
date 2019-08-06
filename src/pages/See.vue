@@ -3,7 +3,7 @@
     <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
       <header>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">Places to See</h1>
-        <p class="text-grey-dark text-lg sm:text-3xl">Cool stuff to do in and around South Africa.</p>
+        <p class="text-grey-dark text-lg sm:text-3xl">Experience the highlights of South Africa.</p>
       </header>
       <section class="mt-10 grid md:3-cols lg:4-cols xl:5-cols">
         <attraction-item class="" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />

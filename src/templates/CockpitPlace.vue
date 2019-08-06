@@ -9,7 +9,18 @@
             <div class="flex mt-6">
               <g-image src="~/assets/sun.svg" width="20" immediate="true" /> <span class="text-lg font-italic ml-2 leading-normal text-gray-700" v-html="$page.post.weather" />
             </div>
-
+            <div class="">
+              <template>
+                <weather
+                    api-key="408dbe336740c8c807f4a1c1ecf60e98"
+                    title="Weather"
+                    latitude:="$page.post.latitude"
+                    longitude:="$page.post.longitude"
+                    language="en"
+                    units="za">
+                </weather>
+            </template>
+            </div>
             <ul class="mt-6 mr-3">
               <li v-if="$page.post.province"><strong class="w-1/4 inline-block">Province:</strong> <span>{{ $page.post.province.display }}</span></li>
               <li><strong class="w-1/4 inline-block">District:</strong> <span>{{ $page.post.district }}</span></li>
@@ -32,9 +43,12 @@
 import config from '~/.temp/config.js'
 import slugify from '@sindresorhus/slugify'
 import PostHeader from '~/components/PostHeader'
+import VueWeatherWidget from 'vue-weather-widget';
+import 'vue-weather-widget/dist/css/vue-weather-widget.css';
 
 export default {
   components: {
+    'weather': VueWeatherWidget,
     PostHeader
   },
   metaInfo () {
