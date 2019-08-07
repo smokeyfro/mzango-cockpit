@@ -27,11 +27,11 @@
       </main>
       <section class="p-20">
         <div class="provinces">
-          <QListItems v-slot="{ provinces: provinces }">
+          <QProvinces v-slot="{ provinces: provinces }">
             <template v-for="post in posts">
               <li><g-link :to="`${post.path}`" class="text-black font-bold">{{ post.title }}</g-link></li>
             </template>
-          </QListItems>
+          </QProvinces>
         </div>
         <div class="">
 
@@ -50,7 +50,7 @@ export default {
   components: {
     Header,
     QHosts: () => import('../queries/QHosts.vue'),
-    QListItems: () => import('../queries/QListItems.vue')
+    QProvinces: () => import('../queries/QProvinces.vue')
   },
   metaInfo: {
     title: 'Home'

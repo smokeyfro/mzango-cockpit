@@ -5,7 +5,7 @@
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">Places to See</h1>
         <p class="text-grey-dark text-lg sm:text-3xl">Experience the highlights of South Africa.</p>
       </header>
-      <section class="mt-10 grid md:3-cols lg:4-cols xl:5-cols">
+      <section class="mt-10 grid">
         <attraction-item class="" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
       </section>
       <pagination :info="$page.posts.pageInfo" v-if="$page.posts.pageInfo.totalPages > 1" />

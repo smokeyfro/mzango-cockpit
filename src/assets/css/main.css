@@ -76,7 +76,9 @@ hr.short {
     box-shadow: inset 300px 0 0 0 #E4104A;
     color: #fff;
 }
-
+.layout .active {
+    background: #525458;
+}
 @media (min-width: 768px) {
   .header li .active {
       background: #000;
@@ -92,7 +94,13 @@ span.fe_location {
 
 .spacer {
     width: 100%;
-    max-height: 200px;
+    height: 200px;
+}
+.spacer.attraction {
+    min-width: 140px;
+    min-height: 140px;
+    width: 140px;
+    height: 140px;
 }
 .grid {
   display: grid;

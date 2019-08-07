@@ -5,9 +5,28 @@
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">City Guides</h1>
         <p class="text-grey-dark text-lg sm:text-3xl">Explore the cities and towns of South Africa.</p>
       </header>
-      <section class="mt-12 flex flex-wrap">
-        <post-item class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
+      <div class="toolbar flex justify-between bg-gray-100 my-4 p-4 rounded">
+        <div class="search w-1/2 pr-4">
+          <input type="text" name="placesSearch" v-model="searchQuery" value="" placeholder="Type in a town or city" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal">
+        </div>
+        <div class="layout flex">
+          <a class="grid-icon bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded rounded-tr-none rounded-br-none" v-on:click="layout = 'grid'" v-bind:class="{ 'active': layout == 'grid'}" title="Grid">Grid</a>
+          <a class="list-icon bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 mx-px" v-on:click="layout = 'list'" v-bind:class="{ 'active': layout == 'list'}" title="List">List</a>
+          <a class="grid-icon bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded rounded-tl-none rounded-bl-none" v-on:click="layout = 'map'" v-bind:class="{ 'active': layout == 'map'}" title="Map">Map</a>
+        </div>
+      </div>
+      <section v-if="$page.posts.edges.length">
+        <div v-if="layout === 'grid'" class="grid">
+          <place-item class="" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
+        </div>
+        <div v-if="layout === 'list'" class="list flex flex-wrap">
+          <post-item class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
+        </div>
+        <div v-if="layout === 'map'" class="map">
+          <map-item v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
+        </div>
       </section>
+
       <pagination :info="$page.posts.pageInfo" v-if="$page.posts.pageInfo.totalPages > 1" />
     </main>
   </Layout>
@@ -16,12 +35,23 @@
 <script>
 import config from '~/.temp/config.js'
 import PostItem from '@/components/PostItem'
+import PlaceItem from '@/components/PlaceItem'
+import MapItem from '@/components/MapItem'
 import Pagination from '@/components/Pagination'
 
 export default {
   components: {
     PostItem,
+    PlaceItem,
+    MapItem,
     Pagination
+  },
+  data () {
+    return {
+      layout: 'grid',
+      searchQuery: '',
+      places: this.posts
+    }
   },
   metaInfo () {
     return {
@@ -48,9 +78,19 @@ export default {
     },
     ogImageUrl () {
       return `${this.config.siteUrl}/images/sf-card.png`
+    },
+    filteredPlaces (){
+      if(this.searchQuery){
+      return this.places.edges.node.filter((item)=>{
+        return item.title.startsWith(this.searchQuery);
+      })
+      }else{
+        return this.places;
+      }
     }
   },
 }
+
 </script>
 
 <page-query>

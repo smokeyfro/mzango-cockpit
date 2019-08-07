@@ -1,6 +1,6 @@
 <template>
-  <Layout class="bg-black-500">
-    <main class="w-full error">
+  <Layout class="bg-white">
+    <main class="p-10 relative z-10 mx-10">
       <div class="flex items-center">
         <div class="w-full sm:w-3/4 md:w-3/5 lg:w-2/5 max-w-md mx-auto px-6 md:px-0  mt-20">
           <section class="relative z-2 w-auto mx-auto ">
