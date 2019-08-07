@@ -10,12 +10,19 @@
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "@gridsome/plugin-google-analytics": "^0.1.0",
     "@gridsome/plugin-sitemap": "^0.2.1",
+    "@tillhub/vue-search-filter": "^1.10.0",
     "cockpit-sdk": "^0.15.1",
     "gridsome": "^0.6.6",
     "gridsome-plugin-rss": "^1.1.0",
+    "js-worker-search": "^1.4.1",
+    "leaflet": "^1.5.1",
+    "magic-grid": "^3.2.4",
     "vue-clickaway": "^2.2.2",
     "vue-weather-widget": "^2.1.7",
-    "vue-youtube-embed": "^2.2.2"
+    "vue-youtube-embed": "^2.2.2",
+    "vue2-leaflet": "^2.2.1",
+    "vue2-waterfall": "^2.0.3",
+    "vuex-search": "^2.2.4"
   },
   "devDependencies": {
     "postcss-import": "^12.0.1",
