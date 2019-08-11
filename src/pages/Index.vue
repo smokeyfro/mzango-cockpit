@@ -3,7 +3,7 @@
     <div class="h-full w-full">
       <g-image src="~/assets/images/home-header-pink.jpg" class="object-cover h-full" />
     </div>
-    <Header class="absolute top-0 w-full" />
+    <Header class="absolute top-0 w-full z-20" />
       <main class="bg-white p-20">
         <div class="flex justify-between w-full">
           <h2 class="text-xl sm:text-2xl md:text-3xl font-sans font-bold content-center">Popular Hosts</h2>
@@ -45,10 +45,12 @@
 
 <script>
 import Header from '~/components/Header'
+import QProvinces from '@/queries/QProvinces';
 
 export default {
   components: {
     Header,
+    QProvinces,
     QHosts: () => import('../queries/QHosts.vue'),
     QProvinces: () => import('../queries/QProvinces.vue')
   },

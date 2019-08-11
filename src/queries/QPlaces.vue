@@ -1,7 +1,7 @@
 <template>
-  <ul>
-    <slot v-bind:posts="provinces"></slot>
- </ul>
+  <span>
+   <slot v-bind:posts="posts"></slot>
+  </span>
 </template>
 
 <script>
@@ -16,13 +16,17 @@ export default {
 </script>
 
 <static-query>
-query Provinces {
-  posts: allCockpitProvince {
+query Places {
+  posts: allCockpitPlace {
     edges {
       node {
         id
         title
+        excerpt
         path
+        province {
+          display
+        }
       }
     }
   }

@@ -13,7 +13,7 @@
           </ul>
         </nav>
         <div class="social-links">
-          <g-link class="bg-transparent hover:bg-black hover:text-white text-black border border-black hover:border-transparent font-bold rounded-full px-5 py-2" to="/mag">Magazine</g-link>
+          <g-link class="btn bg-transparent hover:bg-black hover:text-white text-black border border-black hover:border-transparent font-bold rounded-full px-5 py-2" to="/mag">Magazine</g-link>
           <Nav />
         </div>
       </div>
@@ -21,12 +21,7 @@
 </template>
 
 <script>
-import Nav from '@/components/Nav'
-
 export default {
-  name: 'Header',
-  components: {
-    Nav
-  }
+  name: 'Header'
 }
 </script>

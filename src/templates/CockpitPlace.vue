@@ -37,6 +37,7 @@
 import config from '~/.temp/config.js'
 import slugify from '@sindresorhus/slugify'
 import PostHeader from '~/components/PostHeader'
+import VueWeatherWidget from 'vue-weather-widget';
 
 export default {
   components: {
