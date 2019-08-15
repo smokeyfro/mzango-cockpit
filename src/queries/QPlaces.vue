@@ -1,7 +1,9 @@
 <template>
-  <span>
-   <slot v-bind:posts="posts"></slot>
-  </span>
+  <div class="">
+    <span>
+     <slot v-bind:posts="post"></slot>
+    </span>
+  </div>
 </template>
 
 <script>
@@ -17,7 +19,7 @@ export default {
 
 <static-query>
 query Places {
-  posts: allCockpitPlace {
+  post: allCockpitPlace {
     edges {
       node {
         id
