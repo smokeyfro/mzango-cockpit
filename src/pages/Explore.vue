@@ -11,7 +11,8 @@
         </div> -->
         <SearchForm />
         <div class="layout flex">
-          <a class="grid-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full rounded-tr-none rounded-br-none" v-on:click="layout = 'grid'" v-bind:class="{ 'active': layout == 'grid'}" title="Grid">Grid</a>
+          <a class="grid-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 mx-px rounded-full rounded-tr-none rounded-br-none" v-on:click="layout = 'grid'" v-bind:class="{ 'active': layout == 'grid'}" title="Grid">Grid</a>
+          <a class="list-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4" v-on:click="layout = 'table'" v-bind:class="{ 'active': layout == 'table'}" title="Table">Table</a>
           <a class="list-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 mx-px" v-on:click="layout = 'list'" v-bind:class="{ 'active': layout == 'list'}" title="List">List</a>
           <a class="grid-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full rounded-tl-none rounded-bl-none" v-on:click="layout = 'map'" v-bind:class="{ 'active': layout == 'map'}" title="Map">Map</a>
         </div>
@@ -26,6 +27,17 @@
         <div v-if="layout === 'map'" class="map">
           <map-item v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
         </div>
+        <table v-if="layout === 'table'" class="table border border-2 border-collapse table-auto w-full text-left p-3">
+          <tr>
+            <th>Name</th>
+            <th>Province</th>
+            <th>State</th>
+            <th>Location</th>
+            <th>Code</th>
+            <th>Website</th>
+          </tr>
+          <table-item v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
+        </table>
       </section>
 
       <pagination :info="$page.posts.pageInfo" v-if="$page.posts.pageInfo.totalPages > 1" />
@@ -38,6 +50,7 @@ import config from '~/.temp/config.js'
 import PostItem from '@/components/PostItem'
 import PlaceItem from '@/components/PlaceItem'
 import MapItem from '@/components/MapItem'
+import TableItem from '@/components/TableItem'
 import Pagination from '@/components/Pagination'
 import SearchForm from '~/components/SearchForm'
 
@@ -46,6 +59,7 @@ export default {
     PostItem,
     PlaceItem,
     MapItem,
+    TableItem,
     Pagination,
     SearchForm,
   },
@@ -110,6 +124,14 @@ export default {
           title
           excerpt
           path
+          longitude
+          latitude
+          website
+          area_code
+          postal_code
+          district {
+            display
+          }
           province {
             display
           }

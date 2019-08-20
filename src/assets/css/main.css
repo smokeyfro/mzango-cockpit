@@ -64,7 +64,17 @@ hr.short {
   z-index: -1;
 }
 
-
+.table td, .table th {
+    padding: 10px!important;
+}
+.table th {
+    background: #222;
+    color: #fff;
+    position: sticky;
+}
+.table tr:nth-of-type(odd) {
+    background: #f7f7f7;
+}
 .link {
   padding: 5px 10px;
   box-shadow: inset 0 0 0 0 #fff;
