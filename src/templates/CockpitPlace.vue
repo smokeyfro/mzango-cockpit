@@ -13,7 +13,7 @@
           <div class="">
             <div v-if="$page.place.excerpt" class="markdown text-3xl mr-10 leading-normal text-gray-700" v-html="$page.place.excerpt" />
             <a v-if="$page.place.website" :href="$page.place.website" class="inline-block rounded-full px-5 py-2 text-md font-semibold text-white mt-6" style="background-color:#E4104A;">Official Site</a>
-            <div class="mr-12 mt-5" v-if="$page.place.latitude">
+            <!-- <div class="mr-12 mt-5" v-if="$page.place.latitude">
               <template>
                 <weather
                     api-key="408dbe336740c8c807f4a1c1ecf60e98"
@@ -24,7 +24,7 @@
                     units="uk">
                 </weather>
             </template>
-            </div>
+            </div> -->
           </div>
           <div v-if="$page.place.content" class="markdown text-xl leading-normal text-gray-700" v-html="$page.place.content" />
 
@@ -45,11 +45,11 @@
 import config from '~/.temp/config.js'
 import slugify from '@sindresorhus/slugify'
 import PostHeader from '~/components/PostHeader'
-import VueWeatherWidget from 'vue-weather-widget';
+// import VueWeatherWidget from 'vue-weather-widget';
 
 export default {
   components: {
-    'weather': VueWeatherWidget,
+    // 'weather': VueWeatherWidget,
     PostHeader
   },
   metaInfo () {
