@@ -1,5 +1,11 @@
-# SmokeyFro
+# Mzango.com
+The Backpackers Guide to South Africa
 
-Repo for the SmokeyFro site.
+## The Stack:
+- Gridsome
+- Vue.js
+- GraphQL
+- Cockpit
+- Netlify
+- Cloudflare
 
-Based on the [Breda starter](https://github.com/cossssmin/gridsome-starter-bleda) for [Gridsome](https://gridsome.org).
