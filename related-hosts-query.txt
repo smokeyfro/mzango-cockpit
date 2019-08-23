@@ -1,0 +1,15 @@
+query Place ($path: String) {
+  place: cockpitPlace (path: $path) {
+    id
+    title
+    belongsTo {
+      edges {
+        node {
+          ... on CockpitHost {
+            title
+          }
+        }
+      }
+    }
+  }
+}

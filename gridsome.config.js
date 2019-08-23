@@ -30,6 +30,13 @@ module.exports = {
             event: '/events/:year/:month/:slug',
             event_type: '/events/:slug',
             activity: '/do/:slug'
+          },
+          refs: {
+            hosts: {
+              typeName: 'CockpitHost',
+              route: '/stay/:id',
+              create: true
+            }
           }
         }
     },

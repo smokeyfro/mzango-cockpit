@@ -27,15 +27,13 @@
             </div> -->
           </div>
           <div v-if="$page.place.content" class="markdown text-xl leading-normal text-gray-700" v-html="$page.place.content" />
-
-          <ul>
-            <li v-for="edge in $page.place.belongsTo.edges" :key="edge.node.id">
-              <g-link :to="edge.node.path">
-                {{ edge.node.title }}
-              </g-link>
-            </li>
-          </ul>
         </div>
+        {{ prevUrl }} {{ nextUrl }}
+        <ul class="post-list">
+          <li v-for="{ node } in $page.place.belongsTo.edges" :key="node.id">
+            <RelatedHost :post="node" />
+          </li>
+        </ul>
       </article>
     </main>
   </Layout>
@@ -57,27 +55,43 @@ export default {
       title: `${this.$page.place.title}`
     }
   },
-  data() {
-    return {
-      darksky: process.env.DARKSKY_API_KEY
-    };
-  },
-  methods: {
-    description(place, length, clamp) {
-      if (place.description) {
-        return place.description
-      }
-
-      length = length || 280
-      clamp = clamp || ' ...'
-      let text = place.content.replace(/<pre(.|\n)*?<\/pre>/gm, '').replace(/<[^>]+>/gm, '')
-
-      return text.length > length ? `${ text.slice(0, length)}${clamp}` : text
-    }
-  },
+  // data() {
+  //   return {
+  //     darksky: process.env.DARKSKY_API_KEY
+  //   };
+  // },
+  // methods: {
+  //   description(place, length, clamp) {
+  //     if (place.description) {
+  //       return place.description
+  //     }
+  //
+  //     length = length || 280
+  //     clamp = clamp || ' ...'
+  //     let text = place.content.replace(/<pre(.|\n)*?<\/pre>/gm, '').replace(/<[^>]+>/gm, '')
+  //
+  //     return text.length > length ? `${ text.slice(0, length)}${clamp}` : text
+  //   }
+  // },
   computed: {
     config () {
       return config
+    },
+    prevUrl () {
+      if (!this.$page.prevPlace) return null
+      // FIXME: remove trailing slash when 0.7 comes out
+      return this.$page.prevPlace.path + '/'
+    },
+    nextUrl () {
+      if (!this.$page.nextPlace) return null
+      // FIXME: remove trailing slash when 0.7 comes out
+      return this.$page.nextPlace.path + '/'
+    },
+    metaLinks () {
+      const links = []
+      this.prevUrl && links.push({rel: 'previous', href: this.prevUrl})
+      this.nextUrl && links.push({rel: 'next', href: this.nextUrl})
+      return links
     },
     postUrl () {
       let siteUrl = this.config.siteUrl
@@ -101,10 +115,11 @@ export default {
 }
 </script>
 
-  <page-query>
-  query Place ($path: String!, $id: String!) {
-    place: cockpitPlace (path: $path, id: $id) {
+<page-query>
+  query Place ($id: String, $prevId: String, $nextId: String) {
+    place: cockpitPlace (id: $id) {
       id
+      path
       title
       slug
       content
@@ -123,17 +138,24 @@ export default {
       district{
         display
       }
-      belongsTo {
+      belongsTo{
         edges {
           node {
             ... on CockpitHost {
               id
               title
               path
-            }
+              excerpt
+          	}
           }
         }
       }
+    }
+    prevPost: cockpitPlace (id: $prevId) {
+      path
+    }
+    nextPost: cockpitPlace (id: $nextId) {
+      path
     }
   }
   </page-query>

@@ -25,7 +25,7 @@
           </template>
         </QHosts>
       </main>
-      <section class="p-20">
+      <!-- <section class="p-20">
         <div class="provinces">
           <QProvinces v-slot="{ provinces: provinces }">
             <template v-for="post in posts">
@@ -39,7 +39,7 @@
         <div class="">
 
         </div>
-      </section>
+      </section> -->
   </div>
 </template>
 

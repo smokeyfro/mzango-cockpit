@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <slot v-bind:posts="provinces"></slot>
+    <slot v-bind:posts="posts"></slot>
  </ul>
 </template>
 
