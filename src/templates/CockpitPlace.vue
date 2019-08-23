@@ -28,9 +28,9 @@
           </div>
           <div v-if="$page.place.content" class="markdown text-xl leading-normal text-gray-700" v-html="$page.place.content" />
         </div>
-        {{ prevUrl }} {{ nextUrl }}
+
         <ul class="post-list">
-          <li v-for="{ node } in $page.place.belongsTo.edges" :key="node.id">
+          <li v-for="{ node } in $page.hosts.edges" :key="node.id">
             <RelatedHost :post="node" />
           </li>
         </ul>
@@ -43,12 +43,14 @@
 import config from '~/.temp/config.js'
 import slugify from '@sindresorhus/slugify'
 import PostHeader from '~/components/PostHeader'
+import RelatedHost from '~/components/RelatedHost'
 // import VueWeatherWidget from 'vue-weather-widget';
 
 export default {
   components: {
     // 'weather': VueWeatherWidget,
-    PostHeader
+    PostHeader,
+    RelatedHost
   },
   metaInfo () {
     return {
@@ -148,6 +150,13 @@ export default {
               excerpt
           	}
           }
+        }
+      }
+    }
+    hosts: allCockpitHost (order:ASC) {
+      edges {
+        node {
+          title
         }
       }
     }

@@ -3,8 +3,8 @@ module.exports = function (api) {
 	// previous ID with a given page
 	api.createPages(async ({ graphql, createPage }) => {
 		const { data } = await graphql(`
-			query RelatedPlaces {
-				places: allCockpitPlace (order: ASC) {
+			query RelatedHosts {
+				places: allCockpitHost (order: ASC) {
 					edges {
 						node {
 							id,
@@ -22,7 +22,7 @@ module.exports = function (api) {
 
 			createPage({
 				path: node.path,
-				component: './src/templates/CockpitPlace.vue',
+				component: './src/templates/CockpitHost.vue',
 				queryVariables: {
 					id: node.id,
 					prevId: (prev && prev.node.id) || null,

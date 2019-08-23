@@ -1,11 +1,5 @@
 <template>
-  <div>
-    <h2 v-html="post.title" />
-    <div v-html="post.excerpt" />
-    <g-link :to="post.path">
-      Read More
-    </g-link>
-  </div>
+    <li v-if="post.title"><g-link :to="post.path" class="bg-white text-black">{{ post.title }}</g-link></li>
 </template>
 
 <script>

@@ -86,9 +86,9 @@ hr.short {
     box-shadow: inset 300px 0 0 0 #E4104A;
     color: #fff;
 }
-.layout .active {
+/* .layout .active {
     background: #E4104A;
-}
+} */
 @media (min-width: 768px) {
   .header li .active {
       background: #000;
