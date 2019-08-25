@@ -40,17 +40,23 @@
 
         </div>
       </section> -->
+      <BottomNav />
+      <Footer />
   </div>
 </template>
 
 <script>
 import Header from '~/components/Header'
+import BottomNav from '~/components/BottomNav'
+import Footer from '~/components/Footer'
 import QProvinces from '@/queries/QProvinces';
 
 export default {
   components: {
     Header,
     QProvinces,
+    BottomNav,
+    Footer,
     QHosts: () => import('../queries/QHosts.vue'),
     QProvinces: () => import('../queries/QProvinces.vue')
   },
