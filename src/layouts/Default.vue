@@ -7,7 +7,8 @@
     <slot/>
     <BottomNav />
     <Footer />
-    <modal v-show="modal === true">
+    <div v-if="modal === true">
+    <modal>
       <template slot="header">
         <h2>Greetings fellow earthling!</h2>
       </template>
@@ -21,6 +22,7 @@
         </div>
       </template>
     </modal>
+    </div>
   </div>
 </template>
 
