@@ -7,7 +7,7 @@
     <slot/>
     <BottomNav />
     <Footer />
-    <modal v-if="modal === true">
+    <modal v-show="modal === true">
       <template slot="header">
         <h2>Greetings fellow earthling!</h2>
       </template>
@@ -41,7 +41,7 @@ export default {
   computed: {
     config () {
       return config
-    }
+    },
   },
   stored: {
     modal: {
