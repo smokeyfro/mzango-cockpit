@@ -27,7 +27,7 @@
     </main>
     <BottomNav />
     <Footer />
-    <modal v-show="modal === true">
+    <modal v-if="modal === true">
       <template slot="header">
         <h2>Greetings fellow earthling!</h2>
       </template>
