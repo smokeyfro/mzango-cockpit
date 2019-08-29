@@ -7,6 +7,20 @@
     <slot/>
     <BottomNav />
     <Footer />
+    <modal v-show="isModalVisible" @close="closeModal">
+      <template slot="header">
+        <h2>Greetings fellow earthling!</h2>
+      </template>
+      <template slot="body">
+        <p class="text-xl">This is the early preview of Mzango, <em>the unofficial guide to backpacking in South Africa</em>.</p> 
+        <p class="my-4">The site is still in active development and a lot will change before the official launch. <a href="#" @click="closeModal" class="font-bold bg-yellow-200">Subscribe</a> to be notified when we launch.</p>
+      </template>
+      <template slot="footer">
+        <div class="mt-5">
+          <button @click="closeModal" aria-label="Close modal" type="button" name="button" class="bg-black text-white py-2 px-4 rounded-full">Roger that!</button>
+        </div>
+      </template>
+    </modal>
   </div>
 </template>
 
@@ -15,18 +29,36 @@ import config from '~/.temp/config.js'
 import Header from '~/components/Header.vue'
 import BottomNav from '@/components/BottomNav'
 import Footer from '@/components/Footer'
+import Modal from '@/components/Modal'
 
 export default {
   components: {
     Header,
     BottomNav,
-    Footer
+    Footer,
+    Modal
   },
   computed: {
     config () {
       return config
     }
-  }
+  },
+  stored: {
+    isModalVisible: {
+      type: String,
+      key: 'modal',
+      default: true
+    }
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    }
+  },
+
 }
 </script>
 

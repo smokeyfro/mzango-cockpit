@@ -63,9 +63,15 @@ export default {
     Pagination,
     SearchForm,
   },
+  stored: {
+    layout: {
+      type: String,
+      key: 'layout',
+      default: 'grid'
+    }
+  },
   data () {
     return {
-      layout: 'grid',
       searchQuery: '',
       places: this.posts
     }

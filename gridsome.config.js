@@ -22,8 +22,6 @@ module.exports = {
             province: '/provinces/:slug',
             host: '/hosts/:slug',
             bucketlist: '/blucklists/:slug',
-            tag: '/mag/:slug',
-            topic: '/mag/:slug',
             attraction: '/see/:slug',
             attraction_type: '/all/:slug',
             host: '/stay/:slug',
@@ -35,6 +33,11 @@ module.exports = {
             hosts: {
               typeName: 'CockpitHost',
               route: '/stay/:id',
+              create: true
+            },
+            places: {
+              typeName: 'CockpitPlaces',
+              route: '/explore/:id',
               create: true
             }
           }

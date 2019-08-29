@@ -1,13 +1,13 @@
 <template>
   <ul>
-    <slot v-bind:posts="posts"></slot>
+    <slot v-bind:posts="provinces"></slot>
  </ul>
 </template>
 
 <script>
 export default {
   computed: {
-    posts() {
+    provinces() {
       return this.$static.posts &&
         this.$static.posts.edges.map(e => e.node)
     }
@@ -17,12 +17,10 @@ export default {
 
 <static-query>
 query Provinces {
-  posts: allCockpitProvince {
+  provinces: allCockpitProvince {
     edges {
       node {
-        id
         title
-        path
       }
     }
   }

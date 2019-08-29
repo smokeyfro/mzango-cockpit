@@ -94,7 +94,7 @@ class CockpitSource {
           .reduce((x, y) => ({ ...x, [y]: entry[y] }), {})
 
         // Process fields to prepare them for Gridsome.
-        Object.keys(fieldsSpec).forEach(async f => {
+        Object.keys(fieldsSpec).forEach(f => {
           const fieldDefinition = fieldsSpec[f]
           switch (fieldDefinition.type) {
             case 'repeater':
@@ -105,7 +105,7 @@ class CockpitSource {
               delete fields[fieldDefinition.name]
               break
             case 'collectionlink':
-              Object.keys(fields[fieldDefinition.name]).forEach(async r => {
+              Object.keys(fields[fieldDefinition.name]).forEach(r => {
                 const instance = fields[fieldDefinition.name][r]
                 const typeName = this.store.makeTypeName(instance.link)
                 fields[fieldDefinition.name][r] = this.store.createReference(typeName, instance._id)
