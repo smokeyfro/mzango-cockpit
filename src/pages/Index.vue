@@ -58,7 +58,6 @@ export default {
     QProvinces,
     BottomNav,
     Modal,
-    RelatedHost,
     Footer,
     QHosts: () => import('../queries/QHosts.vue'),
     QProvinces: () => import('../queries/QProvinces.vue')
