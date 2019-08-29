@@ -1,4 +1,5 @@
 <template>
+
   <Layout class="bg-white">
     <div>
       <header>
@@ -11,10 +12,10 @@
         </div> -->
         <SearchForm />
         <div class="layout-toggle flex">
-          <a class="grid-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 mx-px rounded-full rounded-tr-none rounded-br-none" v-on:click="layout = 'grid'" v-bind:class="{ 'active': layout == 'grid'}" title="Grid">Grid</a>
-          <a class="list-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4" v-on:click="layout = 'table'" v-bind:class="{ 'active': layout == 'table'}" title="Table">Table</a>
-          <a class="list-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 mx-px" v-on:click="layout = 'list'" v-bind:class="{ 'active': layout == 'list'}" title="List">List</a>
-          <a class="grid-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full rounded-tl-none rounded-bl-none" v-on:click="layout = 'map'" v-bind:class="{ 'active': layout == 'map'}" title="Map">Map</a>
+          <a class="cursor-pointer grid-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 mx-px rounded-full rounded-tr-none rounded-br-none" v-on:click="layout = 'grid'" v-bind:class="{ 'bg-red-900': layout == 'grid'}" title="Grid">Grid</a>
+          <a class="cursor-pointer list-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4" v-on:click="layout = 'table'" v-bind:class="{ 'bg-red-900': layout == 'table'}" title="Table">Table</a>
+          <a class="cursor-pointer list-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 mx-px" v-on:click="layout = 'list'" v-bind:class="{ 'bg-red-900': layout == 'list'}" title="List">List</a>
+          <a class="cursor-pointer grid-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full rounded-tl-none rounded-bl-none" v-on:click="layout = 'map'" v-bind:class="{ 'bg-red-900': layout == 'map'}" title="Map">Map</a>
         </div>
       </div>
       <section v-if="$page.posts.edges.length">
