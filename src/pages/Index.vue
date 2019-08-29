@@ -1,10 +1,13 @@
 <template>
   <div class="relative">
-    <div class="h-full w-full overflow-hidden relative">
+    <Header class="fixed top-0 w-full z-30" />
+    <div class="h-screen w-full overflow-hidden fixed top-0">
       <g-image src="~/assets/images/home-header-pink.jpg" class="object-cover object-bottom h-full" />
     </div>
-    <Header class="absolute top-0 w-full z-20" />
-    <main class="p-20">
+    <div class="h-screen flex items-center justify-center content-center">
+      <HomeSearch />
+    </div>
+    <main class="p-10 relative z-30 bg-white mx-10 shadow-2xl mb-10 rounded-lg">
       <div class="flex justify-between w-full">
         <h2 class="text-xl sm:text-2xl md:text-3xl font-sans font-bold content-center">Popular Hosts</h2>
         <g-link to="/stay" class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-3 px-6 border border-black hover:border-transparent rounded-full">View All</g-link>
@@ -24,9 +27,9 @@
           </article>
         </template>
       </QHosts>
+      <BottomNav />
+      <Footer />
     </main>
-    <BottomNav />
-    <Footer />
     <div v-if="modal === true">
     <modal>
       <template slot="header">
@@ -52,6 +55,7 @@ import BottomNav from '~/components/BottomNav'
 import Footer from '~/components/Footer'
 import QProvinces from '@/queries/QProvinces';
 import Modal from '@/components/Modal'
+import HomeSearch from '@/components/HomeSearch'
 
 export default {
   components: {
@@ -59,6 +63,7 @@ export default {
     QProvinces,
     BottomNav,
     Modal,
+    HomeSearch,
     Footer,
     QHosts: () => import('../queries/QHosts.vue'),
     QProvinces: () => import('../queries/QProvinces.vue')

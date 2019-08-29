@@ -1,6 +1,5 @@
 <template>
 	<Layout>
-     <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
       <article>
         <div class="">
           <div class="flex justify-left content-center flex-wrap items-center">
@@ -35,7 +34,6 @@
           </li>
         </ul>
       </article>
-    </main>
 	</Layout>
 </template>
 

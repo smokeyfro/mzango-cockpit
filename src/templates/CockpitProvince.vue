@@ -1,27 +1,25 @@
 <template>
-  <Layout class="bg-white">
-    <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
-      <article>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-5">{{ $page.post.title }}</h1>
-        <div class="flex">
-          <div class="">
-            <div class="markdown text-3xl mr-10 leading-normal text-gray-700" v-html="$page.post.excerpt" />
-            <div class="flex mt-6">
-              <g-image src="~/assets/sun.svg" width="20" immediate="true" /> <span class="text-lg font-italic ml-2 leading-normal text-gray-700" v-html="$page.post.weather" />
-            </div>
-
-            <ul class="mt-6 mr-3">
-              <li><strong class="w-1/4 inline-block">Population:</strong> <span>{{ $page.post.population }}</span></li>
-              <li><strong class="w-1/4 inline-block">Area:</strong> <span>{{ $page.post.area_km }}</span> <span>{{ $page.post.area_sqm }}</span></li>
-              <li><strong class="w-1/4 inline-block">Code:</strong> <span>{{ $page.post.code }}</span></li>
-              <li v-if="$page.post.website"><strong class="w-1/4 inline-block">Capital:</strong> <span>{{ $page.post.capital }}</span></li>
-              <li v-if="$page.post.longitude"><strong class="w-1/4 inline-block">Largest City:</strong> <span>{{ $page.post.large_city }}</span></li>
-            </ul>
+  <Layout>
+    <article>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-5">{{ $page.post.title }}</h1>
+      <div class="flex">
+        <div class="">
+          <div class="markdown text-3xl mr-10 leading-normal text-gray-700" v-html="$page.post.excerpt" />
+          <div class="flex mt-6">
+            <g-image src="~/assets/sun.svg" width="20" immediate="true" /> <span class="text-lg font-italic ml-2 leading-normal text-gray-700" v-html="$page.post.weather" />
           </div>
-          <div class="markdown text-xl leading-normal text-gray-700" v-html="$page.post.content" />
+
+          <ul class="mt-6 mr-3">
+            <li><strong class="w-1/4 inline-block">Population:</strong> <span>{{ $page.post.population }}</span></li>
+            <li><strong class="w-1/4 inline-block">Area:</strong> <span>{{ $page.post.area_km }}</span> <span>{{ $page.post.area_sqm }}</span></li>
+            <li><strong class="w-1/4 inline-block">Code:</strong> <span>{{ $page.post.code }}</span></li>
+            <li v-if="$page.post.website"><strong class="w-1/4 inline-block">Capital:</strong> <span>{{ $page.post.capital }}</span></li>
+            <li v-if="$page.post.longitude"><strong class="w-1/4 inline-block">Largest City:</strong> <span>{{ $page.post.large_city }}</span></li>
+          </ul>
         </div>
-      </article>
-    </main>
+        <div class="markdown text-xl leading-normal text-gray-700" v-html="$page.post.content" />
+      </div>
+    </article>
   </Layout>
 </template>
 

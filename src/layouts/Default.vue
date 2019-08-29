@@ -4,9 +4,11 @@
     <div class="h-full w-full fixed top-0 z-0">
       <g-image src="~/assets/images/home-header-pink.jpg" class="object-cover h-full" />
     </div>
-    <slot/>
-    <BottomNav />
-    <Footer />
+    <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl mb-10 rounded-lg">
+      <slot/>
+      <BottomNav />
+      <Footer />
+    </main>
     <modal v-show="modal === true">
       <div v-if="modal === true">
         <template slot="header">

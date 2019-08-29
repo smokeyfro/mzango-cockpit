@@ -1,16 +1,14 @@
 <template>
-  <Layout class="bg-white">
-    <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
-      <article>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-5">{{ $page.post.title }}</h1>
-        <div class="flex">
-          <div class="">
-            <div class="markdown text-3xl mr-10 leading-normal text-gray-700" v-html="$page.post.excerpt" />
-          </div>
-          <div></div>
+  <Layout>
+    <article>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-5">{{ $page.post.title }}</h1>
+      <div class="flex">
+        <div class="">
+          <div class="markdown text-3xl mr-10 leading-normal text-gray-700" v-html="$page.post.excerpt" />
         </div>
-      </article>
-    </main>
+        <div></div>
+      </div>
+    </article>
   </Layout>
 </template>
 

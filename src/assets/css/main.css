@@ -86,7 +86,7 @@ hr.short {
     box-shadow: inset 300px 0 0 0 #E4104A;
     color: #fff;
 }
-.layout .active {
+.layout-toggle .active {
     background: #E4104A;
 }
 

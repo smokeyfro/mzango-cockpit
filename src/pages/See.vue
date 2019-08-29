@@ -1,6 +1,6 @@
 <template>
   <Layout class="bg-white">
-    <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
+    <div>
       <header>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">Places to See</h1>
         <p class="text-grey-dark text-lg sm:text-3xl">Experience the highlights of South Africa.</p>
@@ -9,7 +9,7 @@
         <attraction-item class="" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
       </section>
       <pagination :info="$page.posts.pageInfo" v-if="$page.posts.pageInfo.totalPages > 1" />
-    </main>
+    </div>
   </Layout>
 </template>
 
@@ -55,7 +55,7 @@ export default {
 
 <page-query>
   query Attractions ($page: Int) {
-    posts: allCockpitAttraction(page: $page, perPage: 60) @paginate {
+    posts: allCockpitAttraction(page: $page, perPage: 16) @paginate {
       totalCount
       pageInfo {
         totalPages

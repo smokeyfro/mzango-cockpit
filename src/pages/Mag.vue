@@ -1,6 +1,6 @@
 <template>
   <Layout class="bg-white">
-    <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
+    <div>
       <header>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">Mag</h1>
         <p class="text-grey-dark text-lg sm:text-3xl">Showcasing South African Culture through Art, Film, Food and more.</p>
@@ -9,7 +9,7 @@
         <post-item class="w-1/4 flex-initial p-2" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
       </section>
       <pagination :info="$page.posts.pageInfo" v-if="$page.posts.pageInfo.totalPages > 1" />
-    </main>
+    </div>
   </Layout>
 </template>
 

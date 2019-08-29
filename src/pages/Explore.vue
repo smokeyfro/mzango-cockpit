@@ -1,6 +1,6 @@
 <template>
   <Layout class="bg-white">
-    <main class="p-10 relative z-10 bg-white mx-10 shadow-2xl">
+    <div>
       <header>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">City Guides</h1>
         <p class="text-grey-dark text-lg sm:text-3xl">Explore the cities and towns of South Africa.</p>
@@ -10,7 +10,7 @@
           <input type="text" name="placesSearch" v-model="searchQuery" value="" placeholder="Type in a town or city" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal">
         </div> -->
         <SearchForm />
-        <div class="layout flex">
+        <div class="layout-toggle flex">
           <a class="grid-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 mx-px rounded-full rounded-tr-none rounded-br-none" v-on:click="layout = 'grid'" v-bind:class="{ 'active': layout == 'grid'}" title="Grid">Grid</a>
           <a class="list-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4" v-on:click="layout = 'table'" v-bind:class="{ 'active': layout == 'table'}" title="Table">Table</a>
           <a class="list-icon bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 mx-px" v-on:click="layout = 'list'" v-bind:class="{ 'active': layout == 'list'}" title="List">List</a>
@@ -39,9 +39,8 @@
           <table-item v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
         </table>
       </section>
-
       <pagination :info="$page.posts.pageInfo" v-if="$page.posts.pageInfo.totalPages > 1" />
-    </main>
+    </div>
   </Layout>
 </template>
 
@@ -118,7 +117,7 @@ export default {
 
 <page-query>
   query Places ($page: Int) {
-    posts: allCockpitPlace(page: $page, perPage: 60) @paginate {
+    posts: allCockpitPlace(page: $page, perPage: 12) @paginate {
       totalCount
       pageInfo {
         totalPages
