@@ -1,11 +1,6 @@
 <script>
   export default {
-    name: 'modal',
-    methods: {
-      close() {
-        this.$emit('close');
-      },
-    },
+    name: 'modal'
   };
 </script>
 <template>
@@ -20,37 +15,16 @@
           class="modal-header text-black text-3xl font-bold mb-3"
           id="modalTitle"
         >
-          <slot name="header">
-            This is the default tile!
-
-            <button
-              type="button"
-              class="btn-close"
-              @click="close"
-              aria-label="Close modal"
-            >
-              x
-            </button>
-          </slot>
+          <slot name="header" />
         </header>
         <section
           class="modal-body relative text-black text-lg"
           id="modalDescription"
         >
-          <slot name="body">
-            Body
-          </slot>
+          <slot name="body" />
         </section>
         <footer class="modal-footer">
-          <slot name="footer">
-            Footer
-            <button
-              type="button"
-              class="btn-green"
-              @click="close"
-              aria-label="Close modal"
-            >Close</button>
-          </slot>
+          <slot name="footer" />
         </footer>
       </div>
     </div>

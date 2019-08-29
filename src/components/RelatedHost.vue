@@ -1,5 +1,5 @@
 <template>
-    <li v-if="post.title"><g-link :to="post.path" class="bg-white text-black">{{ post.title }}</g-link></li>
+    <li v-if="post.title">{{ post.title }}</li>
 </template>
 
 <script>

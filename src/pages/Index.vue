@@ -1,13 +1,10 @@
 <template>
   <div class="relative">
     <div class="h-full w-full overflow-hidden relative">
-      <g-image src="~/assets/images/home-header-pink.jpg" class="object-cover h-full" />
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="absolute bottom-0 w-full object-cover">
-        <path fill="#fff" fill-opacity="1" d="M0,160L1440,96L1440,320L0,320Z"></path>
-      </svg>
+      <g-image src="~/assets/images/home-header-pink.jpg" class="object-cover object-bottom h-full" />
     </div>
     <Header class="absolute top-0 w-full z-20" />
-    <main class="p-20 -mt-24 relative z-20 -mt-24">
+    <main class="p-20">
       <div class="flex justify-between w-full">
         <h2 class="text-xl sm:text-2xl md:text-3xl font-sans font-bold content-center">Popular Hosts</h2>
         <g-link to="/stay" class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-3 px-6 border border-black hover:border-transparent rounded-full">View All</g-link>
@@ -28,36 +25,23 @@
         </template>
       </QHosts>
     </main>
-      <!-- <section class="p-20">
-        <div class="provinces">
-          <QProvinces v-slot="{ provinces: provinces }">
-            <template v-for="post in posts">
-              <li><g-link :to="`${post.path}`" class="text-black font-bold">{{ post.title }}</g-link></li>
-            </template>
-          </QProvinces>
-        </div>
-        <div class="">
-
-        </div>
-        <div class="">
-
-        </div>
-      </section> -->
     <BottomNav />
     <Footer />
-    <modal v-show="isModalVisible" @close="closeModal">
+    <modal v-show="modal === true">
       <template slot="header">
-        <h2>Hello!</h2>
+        <h2>Greetings fellow earthling!</h2>
       </template>
       <template slot="body">
-        <p>I am still activitely working on the site, so please keep this in mind while taking a look around.</p>
+        <p class="text-xl">This is the early preview of Mzango, <em>the unofficial guide to backpacking in South Africa</em>.</p> 
+        <p class="my-4">The site is still in active development and a lot will change before the official launch. <a href="#" v-on:click="modal = false" class="font-bold bg-yellow-200">Subscribe</a> to be notified when we launch.</p>
       </template>
       <template slot="footer">
         <div class="mt-5">
-          <button @click="closeModal" aria-label="Close modal" type="button" name="button" class="bg-black text-white py-2 px-4 rounded-full">Roger that!</button>
+          <button v-on:click="modal = false" aria-label="Close modal" type="button" name="button" class="bg-black text-white py-2 px-4 rounded-full">Roger that!</button>
         </div>
       </template>
     </modal>
+
   </div>
 </template>
 
@@ -74,6 +58,7 @@ export default {
     QProvinces,
     BottomNav,
     Modal,
+    RelatedHost,
     Footer,
     QHosts: () => import('../queries/QHosts.vue'),
     QProvinces: () => import('../queries/QProvinces.vue')
@@ -82,19 +67,11 @@ export default {
     title: 'Home'
   },
   stored: {
-    isModalVisible: {
+    modal: {
       type: String,
       key: 'modal',
       default: true
     }
-  },
-  methods: {
-    showModal() {
-      this.isModalVisible = true;
-    },
-    closeModal() {
-      this.isModalVisible = false;
-    }
-  },
+  }
 }
 </script>
