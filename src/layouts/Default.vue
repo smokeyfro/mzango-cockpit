@@ -9,7 +9,7 @@
       <BottomNav />
       <Footer />
     </main>
-    <div v-if="modal === true">
+    <div>
       <modal>
         <template slot="header">
           <h2>Greetings fellow earthling!</h2>
