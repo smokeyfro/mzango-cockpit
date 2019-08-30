@@ -9,8 +9,8 @@
       <BottomNav />
       <Footer />
     </main>
-    <modal v-show="modal === true">
-      <div v-if="modal === true">
+    <div v-if="modal === true">
+      <modal>
         <template slot="header">
           <h2>Greetings fellow earthling!</h2>
         </template>
@@ -23,8 +23,8 @@
             <button v-on:click="modal = false" aria-label="Close modal" type="button" name="button" class="bg-black text-white py-2 px-4 rounded-full">Roger that!</button>
           </div>
         </template>
-      </div>
-    </modal>
+      </modal>
+    </div>
   </div>
 </template>
 
